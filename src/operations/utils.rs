@@ -19,7 +19,10 @@ use num_traits::Zero;
 /// # Examples
 ///
 /// ```
+/// 
 /// use num_bigint::BigUint;
+/// use large_primes::utils::get_trailing_zeros;
+/// 
 /// let number = BigUint::from(8u32); // Binary: 1000
 /// let trailing_zeros = get_trailing_zeros(&number);
 /// assert_eq!(trailing_zeros, BigUint::from(3u32)); // Three trailing zeros

@@ -26,6 +26,8 @@ use crate::operations::gcd;
 ///
 /// ```
 /// use num_bigint::BigUint;
+/// use large_primes::fermat;
+/// 
 /// let number = BigUint::parse_bytes(b"97", 10).unwrap();
 /// assert!(fermat(&number));
 ///

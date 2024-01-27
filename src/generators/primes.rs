@@ -18,6 +18,8 @@ use num_bigint::BigUint;
 ///
 /// ```
 /// use num_bigint::BigUint;
+/// use large_primes::get_max_primes;
+/// 
 /// let max_value = 10;
 /// let primes = get_max_primes(max_value);
 /// assert_eq!(primes, vec![BigUint::from(2u32), BigUint::from(3u32), BigUint::from(5u32), BigUint::from(7u32)]);

@@ -24,6 +24,8 @@ use crate::operations::utils::get_trailing_zeros;
 ///
 /// ```
 /// use num_bigint::BigUint;
+/// use large_primes::miller_rabin;
+/// 
 /// let number = BigUint::from(19u32);
 /// assert!(miller_rabin(&number));
 ///

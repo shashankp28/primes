@@ -19,6 +19,8 @@ use num_traits::Zero;
 ///
 /// ```
 /// use num_bigint::BigUint;
+/// use large_primes::gcd;
+/// 
 /// let a = BigUint::from(60u32);
 /// let b = BigUint::from(48u32);
 /// let gcd_value = gcd(&a, &b);

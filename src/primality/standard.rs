@@ -21,6 +21,8 @@ use num_traits::{ One, Zero };
 ///
 /// ```
 /// use num_bigint::BigUint;
+/// use large_primes::standard;
+/// 
 /// let prime_number = BigUint::from(19u32);
 /// assert!(standard(&prime_number));
 ///

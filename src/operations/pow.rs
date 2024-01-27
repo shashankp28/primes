@@ -19,6 +19,8 @@ use num_traits::{ One, Zero };
 ///
 /// ```
 /// use num_bigint::BigUint;
+/// use large_primes::pow;
+/// 
 /// let base = BigUint::from(2u32);
 /// let exponent = BigUint::from(3u32);
 /// let result = pow(&base, &exponent);
@@ -68,6 +70,8 @@ pub fn pow(base: &BigUint, exp: &BigUint) -> BigUint {
 ///
 /// ```
 /// use num_bigint::BigUint;
+/// use large_primes::pow_mod;
+/// 
 /// let base = BigUint::from(4u32);
 /// let exponent = BigUint::from(13u32);
 /// let modulus = BigUint::from(497u32);

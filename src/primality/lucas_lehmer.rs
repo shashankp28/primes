@@ -21,7 +21,9 @@ use crate::operations::pow;
 ///
 /// ```
 /// use num_bigint::BigUint;
-/// let power = BigUint::from(3u32);
+/// use large_primes::lucas_lehmer_test;
+/// 
+/// let power = BigUint::from(4u32);
 /// assert!(!lucas_lehmer_test(&power));
 ///
 /// let prime_power = BigUint::from(7u32);
