@@ -1,0 +1,66 @@
+use num_bigint::BigUint;
+
+pub fn get_max_primes(maximum: u64) -> Vec<BigUint> {
+    if maximum < 2 {
+        return Vec::<BigUint>::new();
+    }
+    let mut primes: Vec<BigUint> = Vec::new();
+    let mut sieve = vec![true; (maximum+1) as usize];
+    sieve[0] = false;
+    sieve[1] = false;
+    for i in 2..(maximum+1) {
+        if sieve[i as usize] {
+            primes.push(BigUint::from(i));
+            let mut j = i * i;
+            while j < (maximum+1) {
+                sieve[j as usize] = false;
+                j += i;
+            }
+        }
+    }
+    return primes;
+}
+
+#[cfg(test)]
+mod tests {
+
+    #[test]
+    fn edge_cases() {
+        // Test case 0: Empty
+        assert_eq!(super::get_max_primes(0), Vec::<super::BigUint>::new());
+
+        // Test case 1: Empty
+        assert_eq!(super::get_max_primes(1), Vec::<super::BigUint>::new());
+
+        // Test case 2: [2]
+        assert_eq!(super::get_max_primes(2), vec![super::BigUint::from(2u32)]);
+
+        // Test case 3: [2, 3]
+        assert_eq!(
+            super::get_max_primes(3),
+            vec![super::BigUint::from(2u32), super::BigUint::from(3u32)]
+        );
+
+        // Test case 4: [2, 3]
+        assert_eq!(
+            super::get_max_primes(4),
+            vec![super::BigUint::from(2u32), super::BigUint::from(3u32)]
+        );
+    }
+
+    #[test]
+    fn large_test() {
+        // Generate Huge list of prime numbers
+        let primes = super::get_max_primes(10000000);
+        assert_eq!(primes.len(), 664579);
+
+        assert_eq!(primes[0], super::BigUint::from(2u32));
+        assert_eq!(primes[9], super::BigUint::from(29u32));
+        assert_eq!(primes[99], super::BigUint::from(541u32));
+        assert_eq!(primes[999], super::BigUint::from(7919u32));
+        assert_eq!(primes[9999], super::BigUint::from(104729u32));
+        assert_eq!(primes[99999], super::BigUint::from(1299709u32));
+        assert_eq!(primes[599999], super::BigUint::from(8960453u32));
+    }
+
+}
