@@ -1,14 +1,11 @@
-mod primality;
-mod operations;
-mod generators;
 mod parser;
 
 use clap::Parser;
 use std::time::Instant;
 use parser::Args;
-use generators::get_max_primes;
-use primality::{ standard, fermat, miller_rabin, lucas_lehmer_test };
-use operations::pow;
+use large_primes::get_max_primes;
+use large_primes::{ standard, fermat, miller_rabin, lucas_lehmer_test };
+use large_primes::pow;
 
 fn main() {
     let args = Args::parse();
