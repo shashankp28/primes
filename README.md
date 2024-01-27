@@ -1,5 +1,12 @@
 # Prime Analysis Tool
 
+# NOTE: This README conatins documentation for the binary crate. To see the library docs, please visit [this link](https://docs.rs/large-primes).
+
+[![Crates.io](https://img.shields.io/crates/v/large-primes.svg)](https://crates.io/crates/large-primes)
+[![Documentation](https://docs.rs/large-primes/badge.svg)](https://docs.rs/large-primes/)
+[![Build Status](https://travis-ci.com/shashankp28/primes.svg?branch=master)](https://travis-ci.com/shashankp28/primes)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)]
+
 Prime Analysis Tool is a versatile command-line utility written in Rust, designed to perform various mathematical operations and analyses on prime numbers and large integers. This tool offers a range of functionalities, including standard prime checks, advanced primality tests, number generation, exponentiation, and the Lucas-Lehmer test for Mersenne primes.
 
 ## Features
@@ -87,7 +94,6 @@ Prime Analysis Tool is distributed under the [MIT License](LICENSE).
 
 ## Crates.io
 
-Rust crates.io [link](https://crates.io/crates/large-primes)
----
+## Rust crates.io [link](https://crates.io/crates/large-primes)
 
 Disclaimer: Prime Analysis Tool is a project under active development. Features and functionalities are subject to change.
