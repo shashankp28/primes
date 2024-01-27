@@ -1,6 +1,29 @@
 use num_bigint::BigUint;
 use num_traits::{ One, Zero };
 
+/// Computes the power of a `BigUint` base raised to a `BigUint` exponent.
+///
+/// This function calculates `base` raised to the power of `exp` using an efficient
+/// binary exponentiation algorithm.
+///
+/// # Arguments
+///
+/// * `base` - A reference to a `BigUint` representing the base.
+/// * `exp` - A reference to a `BigUint` representing the exponent.
+///
+/// # Returns
+///
+/// The result of `base` raised to the power of `exp`.
+///
+/// # Examples
+///
+/// ```
+/// use num_bigint::BigUint;
+/// let base = BigUint::from(2u32);
+/// let exponent = BigUint::from(3u32);
+/// let result = pow(&base, &exponent);
+/// assert_eq!(result, BigUint::from(8u32));
+/// ```
 pub fn pow(base: &BigUint, exp: &BigUint) -> BigUint {
     // Modular exponentiation
     let mut result = BigUint::one();
@@ -26,6 +49,31 @@ pub fn pow(base: &BigUint, exp: &BigUint) -> BigUint {
     result
 }
 
+/// Computes the modular exponentiation of a `BigUint` base raised to a `BigUint` exponent modulo another `BigUint`.
+///
+/// This function calculates `(base ^ exp) % modulus` using an efficient binary exponentiation algorithm,
+/// which is useful for large numbers in cryptographic applications.
+///
+/// # Arguments
+///
+/// * `base` - A reference to a `BigUint` representing the base.
+/// * `exp` - A reference to a `BigUint` representing the exponent.
+/// * `modulus` - A reference to a `BigUint` representing the modulus.
+///
+/// # Returns
+///
+/// The result of `(base ^ exp) % modulus`.
+///
+/// # Examples
+///
+/// ```
+/// use num_bigint::BigUint;
+/// let base = BigUint::from(4u32);
+/// let exponent = BigUint::from(13u32);
+/// let modulus = BigUint::from(497u32);
+/// let result = pow_mod(&base, &exponent, &modulus);
+/// assert_eq!(result, BigUint::from(445u32));
+/// ```
 pub fn pow_mod(base: &BigUint, exp: &BigUint, modulus: &BigUint) -> BigUint {
     // Modular exponentiation
     let mut result = BigUint::one();

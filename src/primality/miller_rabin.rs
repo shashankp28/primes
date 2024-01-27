@@ -4,6 +4,38 @@ use num_traits::Zero;
 use crate::operations::{ pow, pow_mod };
 use crate::operations::utils::get_trailing_zeros;
 
+/// Performs the Miller-Rabin primality test.
+///
+/// The Miller-Rabin test is a probabilistic primality test: it can prove that a number is composite,
+/// but it cannot prove that a number is prime. This implementation uses a set of deterministic
+/// witnesses for numbers less than 2^64, which are 2, 3, 5, 7, 11.
+///
+/// # Arguments
+///
+/// * `num` - A reference to a `BigUint` representing the number to test for primality.
+///
+/// # Returns
+///
+/// * `true` if `num` passes the Miller-Rabin primality test for all witnesses.
+/// * `false` if `num` fails the test for any witness, or if `num` is less than or equal to 1.
+///   Note that the function returns `true` when `num` is 2, as it is the only even prime number.
+///
+/// # Examples
+///
+/// ```
+/// use num_bigint::BigUint;
+/// let number = BigUint::from(19u32);
+/// assert!(miller_rabin(&number));
+///
+/// let non_prime = BigUint::from(18u32);
+/// assert!(!miller_rabin(&non_prime));
+/// ```
+///
+/// # Note
+///
+/// This implementation assumes the presence of other functions like `get_trailing_zeros` and `pow_mod`
+/// for getting the number of trailing zeros in the binary representation of a number and for
+/// performing modular exponentiation, respectively. Ensure these functions are correctly implemented.
 pub fn miller_rabin(num: &BigUint) -> bool {
     // Miller Rabin test for witnesses 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
 

@@ -2,6 +2,31 @@ use num_bigint::BigUint;
 use num_traits::{ One, Zero };
 use crate::operations::pow;
 
+/// Performs the Lucas-Lehmer test for Mersenne primes.
+///
+/// The Lucas-Lehmer test is a primality test for Mersenne numbers, which are numbers of the form 2^p - 1,
+/// where p is a prime number. This function checks if the Mersenne number corresponding to the given power
+/// is prime.
+///
+/// # Arguments
+///
+/// * `power` - A reference to a `BigUint` representing the power `p` in the Mersenne number 2^p - 1.
+///
+/// # Returns
+///
+/// * `true` if the Mersenne number 2^p - 1 is prime.
+/// * `false` if the number is composite or if `power` is less than or equal to 1. Note that for power = 2, the function returns `true` as 2^2 - 1 = 3 is prime.
+///
+/// # Examples
+///
+/// ```
+/// use num_bigint::BigUint;
+/// let power = BigUint::from(3u32);
+/// assert!(!lucas_lehmer_test(&power));
+///
+/// let prime_power = BigUint::from(7u32);
+/// assert!(lucas_lehmer_test(&prime_power));
+/// ```
 pub fn lucas_lehmer_test(power: &BigUint) -> bool {
     if power <= &BigUint::from(1u32) {
         return false;

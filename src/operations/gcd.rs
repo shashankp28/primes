@@ -1,6 +1,29 @@
 use num_bigint::BigUint;
 use num_traits::Zero;
 
+/// Computes the greatest common divisor (GCD) of two `BigUint` numbers using the Euclidean algorithm.
+///
+/// The function applies the Euclidean algorithm to find the largest number that divides both `a` and `b`
+/// without leaving a remainder. This algorithm involves a series of division steps until the remainder is zero.
+///
+/// # Arguments
+///
+/// * `a` - A reference to a `BigUint` representing the first number.
+/// * `b` - A reference to a `BigUint` representing the second number.
+///
+/// # Returns
+///
+/// The greatest common divisor of `a` and `b`.
+///
+/// # Examples
+///
+/// ```
+/// use num_bigint::BigUint;
+/// let a = BigUint::from(60u32);
+/// let b = BigUint::from(48u32);
+/// let gcd_value = gcd(&a, &b);
+/// assert_eq!(gcd_value, BigUint::from(12u32));
+/// ```
 pub fn gcd(a: &BigUint, b: &BigUint) -> BigUint {
     // Euclidean algorithm
     let mut a = a.clone();

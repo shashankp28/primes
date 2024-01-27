@@ -1,6 +1,32 @@
 use num_bigint::BigUint;
 use num_traits::{ One, Zero };
 
+/// Performs the standard primality test by checking for prime factors from 2 to the square root of the given number.
+///
+/// This function checks whether the provided number is prime by testing for prime factors in the range from 2
+/// to the square root of the number (inclusive). It returns `true` if the number has no prime factors in that range,
+/// indicating that it is prime.
+///
+/// # Arguments
+///
+/// * `num` - A reference to a `BigUint` representing the number to test for primality.
+///
+/// # Returns
+///
+/// * `true` if `num` passes the standard primality test (has no prime factors from 2 to sqrt(num)).
+/// * `false` if `num` has a prime factor in the specified range or if `num` is less than or equal to 1.
+///   Note that the function returns `true` when `num` is 2, as it is the only even prime number.
+///
+/// # Examples
+///
+/// ```
+/// use num_bigint::BigUint;
+/// let prime_number = BigUint::from(19u32);
+/// assert!(standard(&prime_number));
+///
+/// let non_prime = BigUint::from(15u32);
+/// assert!(!standard(&non_prime));
+/// ```
 pub fn standard(num: &BigUint) -> bool {
     // Standard test for prime factors from 2 to sqrt(num)+1
     if *num <= BigUint::one() {

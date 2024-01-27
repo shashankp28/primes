@@ -3,6 +3,36 @@ use num_traits::One;
 use crate::operations::pow_mod;
 use crate::operations::gcd;
 
+/// Performs a probabilistic primality test using Fermat's little theorem.
+///
+/// Fermat's little theorem states that if `p` is a prime number, then for any
+/// integer `a` such that `1 < a < p - 1`, the number `a^(p-1)` is congruent to 1 modulo `p`.
+/// This function tests the primality of `num` using a set of base witnesses (2, 3, 5, 7, 11, 13, 17, 19, 23, 29).
+///
+/// Note that passing this test does not guarantee that `num` is prime, but failing it
+/// guarantees that `num` is composite. Thus, this function can produce false positives,
+/// but not false negatives.
+///
+/// # Arguments
+///
+/// * `num` - A reference to a `BigUint` representing the number to test for primality.
+///
+/// # Returns
+///
+/// * `true` if `num` passes the Fermat primality test for all witnesses.
+/// * `false` if `num` fails the test for any witness, or if `num` is less than or equal to 1.
+///
+/// # Examples
+///
+/// ```
+/// use num_bigint::BigUint;
+/// let number = BigUint::parse_bytes(b"97", 10).unwrap();
+/// assert!(fermat(&number));
+///
+/// let non_prime = BigUint::parse_bytes(b"100", 10).unwrap();
+/// assert!(!fermat(&non_prime));
+/// ```
+
 pub fn fermat(num: &BigUint) -> bool {
     // Fermat's little theorem test for witnesses 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
 

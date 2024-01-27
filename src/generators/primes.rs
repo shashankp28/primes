@@ -1,5 +1,27 @@
 use num_bigint::BigUint;
 
+/// Generates all prime numbers up to a given maximum value.
+///
+/// This function uses the Sieve of Eratosthenes algorithm to efficiently generate all prime numbers less than
+/// or equal to the specified maximum value. It is useful for tasks that require a list of small prime numbers.
+///
+/// # Arguments
+///
+/// * `maximum` - A `u64` representing the maximum value up to which prime numbers are to be generated.
+///
+/// # Returns
+///
+/// A vector of `BigUint` containing all prime numbers less than or equal to `maximum`.
+/// Returns an empty vector if `maximum` is less than 2.
+///
+/// # Examples
+///
+/// ```
+/// use num_bigint::BigUint;
+/// let max_value = 10;
+/// let primes = get_max_primes(max_value);
+/// assert_eq!(primes, vec![BigUint::from(2u32), BigUint::from(3u32), BigUint::from(5u32), BigUint::from(7u32)]);
+/// ```
 pub fn get_max_primes(maximum: u64) -> Vec<BigUint> {
     if maximum < 2 {
         return Vec::<BigUint>::new();
@@ -8,11 +30,11 @@ pub fn get_max_primes(maximum: u64) -> Vec<BigUint> {
     let mut sieve = vec![true; (maximum+1) as usize];
     sieve[0] = false;
     sieve[1] = false;
-    for i in 2..(maximum+1) {
+    for i in 2..maximum + 1 {
         if sieve[i as usize] {
             primes.push(BigUint::from(i));
             let mut j = i * i;
-            while j < (maximum+1) {
+            while j < maximum + 1 {
                 sieve[j as usize] = false;
                 j += i;
             }
@@ -23,7 +45,6 @@ pub fn get_max_primes(maximum: u64) -> Vec<BigUint> {
 
 #[cfg(test)]
 mod tests {
-
     #[test]
     fn edge_cases() {
         // Test case 0: Empty
@@ -62,5 +83,4 @@ mod tests {
         assert_eq!(primes[99999], super::BigUint::from(1299709u32));
         assert_eq!(primes[599999], super::BigUint::from(8960453u32));
     }
-
 }
