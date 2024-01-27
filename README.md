@@ -4,7 +4,7 @@
 
 [![Crates.io](https://img.shields.io/crates/v/large-primes.svg)](https://crates.io/crates/large-primes)
 [![Documentation](https://docs.rs/large-primes/badge.svg)](https://docs.rs/large-primes/)
-[![Build Status](https://travis-ci.com/shashankp28/primes.svg?branch=master)](https://travis-ci.com/shashankp28/primes)
+[![Build Status](https://github.com/shashankp28/primes/actions/workflows/rust.yml/badge.svg)](https://github.com/shashankp28/primes/actions/workflows/rust.yml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]
 
 Prime Analysis Tool is a versatile command-line utility written in Rust, designed to perform various mathematical operations and analyses on prime numbers and large integers. This tool offers a range of functionalities, including standard prime checks, advanced primality tests, number generation, exponentiation, and the Lucas-Lehmer test for Mersenne primes.
