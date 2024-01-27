@@ -6,7 +6,7 @@ authors = ["Shashank P <shashankp2832@gmail.com>"]
 description = "Package for Large Prime Number Analysis"
 license = "https://github.com/shashankp28/primes/blob/main/LICENSE"
 documentation = "https://github.com/shashankp28/primes/blob/main/README.md"
-readme = "https://github.com/shashankp28/primes/blob/main/README.md"
+readme = "README.md"
 repository = "https://github.com/shashankp28/primes/"
 keywords = [
     "primes",
