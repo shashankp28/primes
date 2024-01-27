@@ -10,10 +10,10 @@ readme = "README.md"
 repository = "https://github.com/shashankp28/primes/"
 keywords = [
     "primes",
-    "prime numbers",
-    "prime number analysis",
-    "prime number generation",
-    "large prime numbers",
+    "prime-numbers",
+    "prime-number-analysis",
+    "prime-number-generation",
+    "large-prime-numbers",
 ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
