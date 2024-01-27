@@ -1,6 +1,6 @@
 [package]
 name = "large-primes"
-version = "0.4.0"
+version = "0.5.0"
 edition = "2021"
 authors = ["Shashank P <shashankp2832@gmail.com>"]
 description = "Package for Large Prime Number Analysis"
