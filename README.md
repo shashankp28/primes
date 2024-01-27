@@ -85,6 +85,9 @@ Prime Analysis Tool is distributed under the [MIT License](LICENSE).
 
 [Shashank P](https://github.com/shashankp28)
 
+## Crates.io
+
+Rust crates.io [link](https://crates.io/crates/large-primes)
 ---
 
 Disclaimer: Prime Analysis Tool is a project under active development. Features and functionalities are subject to change.
