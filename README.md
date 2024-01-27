@@ -79,7 +79,7 @@ Contributions to the Prime Analysis Tool are welcome! Feel free to submit issues
 
 ## License
 
-Prime Analysis Tool is distributed under the [MIT License](LICENSE.md).
+Prime Analysis Tool is distributed under the [MIT License](LICENSE).
 
 ## Author
 
