@@ -83,7 +83,7 @@ Prime Analysis Tool is distributed under the [MIT License](LICENSE.md).
 
 ## Author
 
-[Shashnak P](https://github.com/shashankp28)
+[Shashank P](https://github.com/shashankp28)
 
 ---
 
