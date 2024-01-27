@@ -1,12 +1,12 @@
 [package]
 name = "large-primes"
-version = "0.5.0"
+version = "0.5.1"
 edition = "2021"
 authors = ["Shashank P <shashankp2832@gmail.com>"]
 description = "Package for Large Prime Number Analysis"
 license-file = "LICENSE"
 readme = "README.md"
-documentation = "https://github.com/shashankp28/primes/blob/main/README.md"
+documentation = "https://docs.rs/large-primes/latest/large_primes/"
 repository = "https://github.com/shashankp28/primes/"
 keywords = [
     "primes",
